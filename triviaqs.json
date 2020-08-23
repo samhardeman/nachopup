@@ -1,0 +1,35 @@
+[
+    {
+		"question": "**When was the Declaration of Independence signed?**",
+		"answers": ["1776", "It was signed in 1776", "1776 AD"]
+    },
+    {
+        "question": "**When is Rome thought to be founded?**",
+        "answers": ["753 BC"]
+    },
+    {
+        "question": "**When was the first iPhone released?**",
+        "answers": ["2007", "June 2007", "June 29, 2007"]
+    },
+    {
+        "question": "**Who was the 'Analytical Engine' invented by?**",
+        "answers": ["Charles Babbage", "Babbage"]
+    },
+    {
+        "question": "**Who painted the Mona Lisa?**",
+        "answers": ["Leonardo da Vinci", "Da Vinci", "Davinci", "DaVinci"]
+    },
+    {
+        "question": "**Which cartoon character says \"What's up, Doc?\"**",
+        "answers": ["Bugs Bunny", "bugs bunny"]
+    },
+    {
+        "question": "**Where was this bot made?**",
+        "answers": ["Arizona", "AZ", "Tucson, Arizona", "Tucson"]
+    },
+    {
+        "question": "**In what year was the Statue of Liberty dedicated?**",
+        "answers": ["1886", "October 28, 1886"]
+    }
+
+]
