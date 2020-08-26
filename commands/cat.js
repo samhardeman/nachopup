@@ -29,9 +29,7 @@ module.exports = {
 				.setTitle('**Cat**')
 				.setImage(data.file)
 				.setFooter('Cat Provided by Random Cat');
-			message.channel.send(catembed).catch(error => console.log(error)).then(msg => {
-            msg.delete({ timeout: 60000 });
-      })
+			message.channel.send(catembed).catch(error => console.log(error))
       .catch(error => {
         console.error(error);
         message.channel.send(
