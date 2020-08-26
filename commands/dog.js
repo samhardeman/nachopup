@@ -22,7 +22,7 @@ module.exports = {
 				return error;
 			}
 		};
-		getJSON(randomcaturl).then(data => {
+		getJSON(randomdogurl).then(data => {
 			const catembed = new Discord.MessageEmbed()
 				.setColor('4e57d8')
 				.setTitle('**Dog**')
