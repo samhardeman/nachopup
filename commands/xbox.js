@@ -7,7 +7,7 @@ module.exports = {
   aliases: ["xbx"],
   execute(message, args) {
     var gamertag = args.join(" ");
-    const playerurl = `https://xbl.io/api/v2/friends/search?gt=${gamertag}`;
+    var playerurl = `https://xbl.io/api/v2/friends/search?gt=${gamertag}`;
     
     if (!args[0]) {
 			message.reply('Please include a gamertag to search for!').catch(error => console.error(error));

@@ -2,12 +2,12 @@ const fetch = require('node-fetch');
 const Discord = require('discord.js');
 
 module.exports = {
-	name: 'cat',
+	name: 'dog',
 	description: 'Uses random cat to give a random cat! Nuff said.',
 	cooldown: 20,
-	aliases: ['meow', 'kitty'],
+	aliases: ['woof', 'puppy'],
 	execute(message, args) {
-		const randomcaturl = 'https://aws.random.cat/meow';
+		const randomdogurl = 'https://random.dog/woof.json';
 
 		const getJSON = async url => {
 			try {
@@ -22,12 +22,13 @@ module.exports = {
 				return error;
 			}
 		};
-		getJSON(randomcaturl).then(data => {
+		getJSON(randomdogurl).then(data => {
 			const catembed = new Discord.MessageEmbed()
 				.setColor('4e57d8')
-				.setTitle('**Cat**')
-				.setImage(data.file)
-				.setFooter('Cat Provided by Random Cat');
+				.setTitle('**Dog**')
+        .setDescription(data.url)
+				.setImage(data.url)
+				.setFooter('Dog Provided by random.dog');
 			message.channel.send(catembed).catch(error => console.log(error))
       .catch(error => {
         console.error(error);

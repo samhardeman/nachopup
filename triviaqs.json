@@ -17,7 +17,7 @@
     },
     {
         "question": "**Who painted the Mona Lisa?**",
-        "answers": ["Leonardo da Vinci", "Da Vinci", "Davinci", "DaVinci"]
+        "answers": ["Leonardo da Vinci", "Da Vinci", "Davinci", "DaVinci", "Leonardo DaVinci"]
     },
     {
         "question": "**Which cartoon character says \"What's up, Doc?\"**",
