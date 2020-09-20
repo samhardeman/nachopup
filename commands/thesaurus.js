@@ -62,7 +62,7 @@ module.exports = {
 			return;
 		}).catch(error => {
 			console.error(error);
-			message.channel.send(`Hmmm. Something went wrong. ${word} might not be in the Merriam-Webster Thesaurus. Is it spelled right? You could also try searching this: "&thesaurus Umpire" . If that doesn't work DM CactusBoy#0001`);
+			message.channel.send(`Hmmm. Something went wrong. ${word} might not be in the Merriam-Webster Thesaurus. Is it spelled right? You could also try searching this: "&thesaurus Umpire" . If that doesn't work DM @locuroid on Twitter!`);
 		});
 	},
 };

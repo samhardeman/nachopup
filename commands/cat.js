@@ -1,6 +1,5 @@
 const fetch = require('node-fetch');
 const Discord = require('discord.js');
-const weatherKey = process.env.WEATHER_KEY;
 
 module.exports = {
 	name: 'cat',

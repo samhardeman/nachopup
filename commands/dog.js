@@ -24,6 +24,7 @@ module.exports = {
 		};
 		getJSON(randomdogurl).then(data => {
 			const dogembed = new Discord.MessageEmbed()
+
 				.setColor('4e57d8')
 				.setTitle('**Dog**')
         .setDescription(data.url)
