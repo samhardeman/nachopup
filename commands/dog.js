@@ -23,12 +23,13 @@ module.exports = {
 			}
 		};
 		getJSON(randomdogurl).then(data => {
-			const catembed = new Discord.MessageEmbed()
+			const dogembed = new Discord.MessageEmbed()
 				.setColor('4e57d8')
 				.setTitle('**Dog**')
+        .setDescription(data.url)
 				.setImage(data.url)
 				.setFooter('Dog Provided by random.dog');
-			message.channel.send(catembed).catch(error => console.log(error))
+			message.channel.send(dogembed).catch(error => console.log(error))
       .catch(error => {
         console.error(error);
         message.channel.send(
