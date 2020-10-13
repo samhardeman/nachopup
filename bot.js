@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, greeting_channel } = require('./config.json');
-const xp = require('./.data/xp.json');
+//const xp = require('./.data/xp.json');
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 dotenv.config();
@@ -124,7 +124,7 @@ bot.on('message', message => {
 	}
 	catch (error) {
 		console.error(error);
-		message.reply('Sorry \'bout that. There was an error executing that command!');
+		message.reply('oh no. there was a critical error.');
 	}
 
 });
