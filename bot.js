@@ -2,7 +2,7 @@ const server = require('./server.js');
 const dotenv = require('dotenv');
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, greeting_channel } = require('./config.json');
+const { prefix, greeting_channel } = require('./config-data/config.json');
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 dotenv.config();

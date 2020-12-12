@@ -9,14 +9,7 @@ module.exports = {
 
 		const collector = message.channel.createMessageCollector(filter, { time: 15000 });
 
-		collector.on('collect', m => {
-			console.log(`Collected ${m.content}`);
-		});
-
-		collector.on('end', collected => {
-			console.log(`Collected ${collected.size} items`);
-		});
-		const quiz = require('../triviaqs.json');
+		const quiz = require('../config-data/triviaqs.json');
 		const item = quiz[Math.floor(Math.random() * quiz.length)];
 
 		message.channel.send(item.question).then(() => {

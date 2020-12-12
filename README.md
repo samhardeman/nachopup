@@ -8,19 +8,17 @@
                                           | |
                                           |_|
 ```
-
-### NachoPup says "Hi!"
-## Probably the extra most funnest Discord Bot around.
+## Invite: [https://cutt.ly/nachopup](https://cutt.ly/nachopup)
 ## Prefix: &
-## What can he do?
+## Features:
 - Polls.
 - Internet commands like Google search, Dictionary, Weather, Thesaurus and more.
 - Cats.
 - Trivia.
 - Server greeting in a #welcome channel.
-- Open Source! How much fun is that?
+- Open Source!
 
-## Commands, you say?
+## Commands:
 - &def - Define a word.
 - &thes - Find synonyms of a word.
 - &quiz - Get a trivia question. More coming soon!
@@ -33,15 +31,4 @@
 - &dog - Shows a picture of a dog.
 - &cat - Shows a picture of a cat.
 
-\ ゜ o ゜)ノ
-
-## Feature Wishlist!
-
-- Image manipulation
-- Rickroll your server
-- Event maker
-- Embed maker
-- More Games
-- Settings
-- Server XP
-- Simple Moderation
+## If you want to run your own instance of Nachopup, try [repl.it](https://repl.it).
