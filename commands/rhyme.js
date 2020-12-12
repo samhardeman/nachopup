@@ -12,7 +12,7 @@ module.exports = {
       return message.channel.send('Please give a word to rhyme with.')
     }
 
-    retriever.get(`https://rhymebrain.com/talk?function=getRhymes&word=${word}`).then(data => {
+    retriever(`https://rhymebrain.com/talk?function=getRhymes&word=${word}`).then(data => {
       const rhymeEmbed = new Discord.MessageEmbed()
         .setColor('237CAE')
         .setTitle(`Words that Rhyme with ${word}:`)

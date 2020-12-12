@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
 const Discord = require('discord.js');
+const retriever = require('../retriever');
 
 module.exports = {
 	name: 'nasa',
@@ -9,21 +9,7 @@ module.exports = {
 
 		const nasaiotdurl = `https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA_API_KEY}`;
 
-		const getJSON = async url => {
-			try {
-				const response = await fetch(url, {
-					method: 'GET',
-				});
-				if(!response.ok) {throw new Error(response.statusText);}
-				const data = await response.json();
-				return data;
-			}
-			catch(error) {
-				return error;
-			}
-		};
-
-		getJSON(nasaiotdurl).then(data => {
+	  retriever(nasaiotdurl).then(data => {
 			const nasaembed = new Discord.MessageEmbed()
 				.setColor('4e57d8')
 				.setTitle('**Nasa Image of the Day**')

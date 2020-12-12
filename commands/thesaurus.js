@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const retriever = require('../retriever');
 const Discord = require('discord.js');
 const thesauruskey = process.env.THESAURUS_KEY;
 const capitalize = (str) => {
@@ -18,42 +18,27 @@ module.exports = {
 	execute(message, args) {
 		const word = args.join();
 		const thesurl = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${thesauruskey}`;
-    
-    console.log(word);
 
 		if (!args[0]) {
 			message.reply('Please include a word to search for!').catch(error => console.error(error));
 			return;
 		}
 
-		const getJSON = async url => {
-			try {
-				const response = await fetch(url, {
-					method: 'GET',
-				});
-				if(!response.ok) {throw new Error(response.statusText);}
-				const dictdata = await response.json();
-				return dictdata;
-			}
-			catch(error) {
-				return error;
-			}
-		};
-		getJSON(thesurl).then(thesdata => {
+		retriever(thesurl).then(data => {
 
-      if (thesdata[0] == null) {
+      if (data[0] == null) {
         message.channel.send('Hmmm, I couldn\'t find that word. Is it spelled right? Some words aren\'t in the thesaurus...')
         return;
       }
       
 			const thesembed = new Discord.MessageEmbed()
 				.setColor('cf1b1b')
-				.setTitle('***' + thesdata[0].meta.id + '***')
+				.setTitle('***' + data[0].meta.id + '***')
 				.addFields(
-					{ name: '**Definition:**', value: capitalize(thesdata[0].shortdef[0]) },
-					{ name: '**Part of Speech**', value: thesdata[0].fl },
-					{ name: '**Synonyms:**', value: thesdata[0].meta.syns[0], inline: true },
-					{ name: '**Antonyms:**', value: thesdata[0].meta.ants[0], inline: true },
+					{ name: '**Definition:**', value: capitalize(data[0].shortdef[0]) },
+					{ name: '**Part of Speech**', value: data[0].fl },
+					{ name: '**Synonyms:**', value: data[0].meta.syns[0], inline: true },
+					{ name: '**Antonyms:**', value: data[0].meta.ants[0], inline: true },
 				)
 				.setFooter('Results provided by Merriam-Webster');
 			message.channel.send(thesembed).catch(error => console.error(error)).then(msg => {

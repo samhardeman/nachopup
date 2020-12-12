@@ -1,5 +1,4 @@
-const fetch = require('node-fetch');
-const Discord = require('discord.js');
+const retriever = require('../retriever');const Discord = require('discord.js');
 const weatherKey = process.env.WEATHER_KEY;
 
 module.exports = {
@@ -16,20 +15,7 @@ module.exports = {
 			return;
 		}
 
-		const getJSON = async url => {
-			try {
-				const response = await fetch(url, {
-					method: 'GET',
-				});
-				if(!response.ok) {throw new Error(response.statusText);}
-				const data = await response.json();
-				return data;
-			}
-			catch(error) {
-				return error;
-			}
-		};
-    getJSON(weatherurl)
+    retriever(weatherurl)
       .then(data => {
         //Checks if there is data to be sent. If there isn't, return.
         if (data == 'Error: Not Found') {
@@ -60,7 +46,7 @@ module.exports = {
       .catch(error => {
         console.error(error);
         message.channel.send(
-          "Hmmm. That didn't work... Please DM CactusBoy#0001"
+          "Hmmm. That didn't work... Please DM @Locuroid on Twitter"
         );
       });
   },

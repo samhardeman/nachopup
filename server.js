@@ -2,11 +2,10 @@ const express = require("express");
 const app = express();
 
 app.get("/", (request, response) => {
-  console.log("Ping received!");
-  response.sendStatus(200);
+  response.send('Nachopup is Running! Server status: 200');
 });
 
-// listen for requests :)
+//Listen
 const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
+  console.log('Listening on ' + listener.address().port);
 });

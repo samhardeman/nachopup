@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const retriever = require('../retriever');
 const Discord = require('discord.js');
 
 module.exports = {
@@ -9,20 +9,7 @@ module.exports = {
 	execute(message, args) {
 		const randomdogurl = 'https://random.dog/woof.json';
 
-		const getJSON = async url => {
-			try {
-				const response = await fetch(url, {
-					method: 'GET',
-				});
-				if(!response.ok) {throw new Error(response.statusText);}
-				const data = await response.json();
-				return data;
-			}
-			catch(error) {
-				return error;
-			}
-		};
-		getJSON(randomdogurl).then(data => {
+		retriever(randomdogurl).then(data => {
 			const dogembed = new Discord.MessageEmbed()
 
 				.setColor('4e57d8')

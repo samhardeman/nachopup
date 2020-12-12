@@ -1,17 +1,4 @@
 {
 	"prefix": "&",
-	"greeting_channel": "welcome",
-	"default_settings" :{
-		"search": true,
-		"thesaurus": true,
-		"dictionary": true,
-		"weather": true,
-		"quiz": true,
-		"poll": true,
-		"commands": true,
-		"botinfo": true,
-		"userinfo": true,
-		"clear": true,
-		"help": true
-	}
+	"greeting_channel": "welcome"
 }

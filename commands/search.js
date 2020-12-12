@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const fetch = require("node-fetch");
+const retriever = require('../retriever');
 const key = process.env.GOOGLE_TOKEN;
 
 module.exports = {
@@ -11,8 +11,6 @@ module.exports = {
     var query = args.join(" ");
     const searchurl = `https://kgsearch.googleapis.com/v1/entities:search?query=${query}&key=${key}&limit=1&indent=True`;
 
-    console.log(query);
-
     //Check if they even included something to search for.
     if (!args[0]) {
       message
@@ -21,21 +19,7 @@ module.exports = {
       return;
     }
 
-    const getJSON = async url => {
-      try {
-        const response = await fetch(url, {
-          method: "GET"
-        });
-        if (!response.ok) {
-          throw new Error(response.statusText);
-        }
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        return error;
-      }
-    };
-    getJSON(searchurl)
+    retriever(searchurl)
       .then(data => {
         //Checks if there is data to be sent. If there isn't, return.
         if (data.itemListElement[0] == null) {
