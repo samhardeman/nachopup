@@ -57,7 +57,7 @@ module.exports = {
 			return;
 		}).catch(error => {
 			console.error(error);
-			message.channel.send('Hmmm. Is the word spelled right? You could also try searching this: "&dictionary Cactus" . If that doesn\'t work DM CactusBoy#0001');
+			message.channel.send('Hmmm. Is the word spelled right? You could also try searching this: "&dictionary Cactus" . If that doesn\'t work DM @locuroid on Twitter');
 		});
 	},
 };

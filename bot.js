@@ -3,7 +3,6 @@ const dotenv = require('dotenv');
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, greeting_channel } = require('./config.json');
-//const xp = require('./.data/xp.json');
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 dotenv.config();
@@ -32,7 +31,7 @@ bot.on('guildDelete', guild => {
 
 bot.on('guildMemberAdd', member =>{
 
-	const channel = member.guild.channels.cache.find(channel => channel.name === greeting_channel);
+	const channel = member.guild.channels.cache.find(channel => guild.systemChannel);
 	if (!channel) return;
 
 	channel.send(`Welcome to server, ${member}! I'm NachoPup! My prefix is ${prefix}. You can get my commands by typing ${prefix}cmd. For support DM @locuroid on twitter.`);
@@ -41,45 +40,6 @@ bot.on('guildMemberAdd', member =>{
 bot.on('message', message => {
 
 	if (message.author.bot) return;
-  
-  /*
-
-	const xpAdd = Math.floor(Math.random() * 7) + 8;
-
-	if(!xp[message.author.id + message.guild.id]) {
-		xp[message.author.id + message.guild.id] = {
-			xp: 0,
-			level: 1,
-		};
-	}
-
-	const curxp = xp[message.author.id + message.guild.id].xp;
-	const curlvl = xp[message.author.id + message.guild.id].level;
-	const nxtLvl = xp[message.author.id + message.guild.id].level * 300;
-	xp[message.author.id + message.guild.id].xp = curxp + xpAdd;
-  
-  var name = message.member.nickname;
-    
-  if (message.member.nickname === null) {
-     var name = message.author.username
-  };
-  
-	if(nxtLvl <= xp[message.author.id + message.guild.id].xp) {
-		xp[message.author.id + message.guild.id].level = curlvl + 1;
-		const lvlup = new Discord.MessageEmbed()
-			.setTitle(name + ' leveled Up!')
-			.setColor(0x31f74b)
-			.addField('New Level', curlvl + 1);
-
-		message.channel.send(lvlup).then(msg => {
-            msg.delete({ timeout: 30000 });
-        });
-	}
-	fs.writeFile('./xp.json', JSON.stringify(xp), (err) => {
-		if(err) console.log(err);
-	});
-  
-*/
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
