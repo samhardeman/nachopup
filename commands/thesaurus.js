@@ -1,5 +1,6 @@
 const retriever = require('../retriever');
 const Discord = require('discord.js');
+const contact = require('../config-data/config.json').contact
 const thesauruskey = process.env.THESAURUS_KEY;
 const capitalize = (str) => {
 	if(typeof str === 'string') {
@@ -27,7 +28,7 @@ module.exports = {
 		retriever(thesurl).then(data => {
 
       if (data[0] == null) {
-        message.channel.send('Hmmm, I couldn\'t find that word. Is it spelled right? Some words aren\'t in the thesaurus...')
+        message.channel.send('Hmmm, I couldn\'t find that word. Is it spelled right? Some words aren\'t in the thesaurus. Try a word that you know is there and if that doesn\'t work DM' + contact)
         return;
       }
       
@@ -47,7 +48,7 @@ module.exports = {
 			return;
 		}).catch(error => {
 			console.error(error);
-			message.channel.send(`Hmmm. Something went wrong. ${word} might not be in the Merriam-Webster Thesaurus. Is it spelled right? You could also try searching this: "&thesaurus Umpire" . If that doesn't work DM @locuroid on Twitter!`);
+			message.channel.send(`Hmmm. Something went wrong. ${word} might not be in the Merriam-Webster Thesaurus. Is it spelled right? You could also try searching this: "&thesaurus Umpire" . If that doesn't work DM ${contact}`);
 		});
 	},
 };

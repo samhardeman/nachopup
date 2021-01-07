@@ -1,4 +1,5 @@
 const retriever = require('../retriever');
+const contact = require('../config-data/config.json').contact
 const Discord = require('discord.js');
 const dictionarykey = process.env.DICTIONARY_KEY;
 const capitalize = (str) => {
@@ -42,7 +43,7 @@ module.exports = {
 			return;
 		}).catch(error => {
 			console.error(error);
-			message.channel.send('Hmmm. Is the word spelled right? You could also try searching this: "&dictionary Cactus" . If that doesn\'t work DM @locuroid on Twitter');
+			message.channel.send('Hmmm. Is the word spelled right? You could also try searching this: "&dictionary Cactus" . If that doesn\'t work DM ' + contact);
 		});
 	},
 };

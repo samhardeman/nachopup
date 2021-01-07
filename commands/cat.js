@@ -1,5 +1,6 @@
 const retriever = require('../retriever');
 const Discord = require('discord.js');
+const contact = require('../config-data/config.json').contact
 
 module.exports = {
 	name: 'cat',
@@ -19,7 +20,7 @@ module.exports = {
       .catch(error => {
         console.error(error);
         message.channel.send(
-          "Hmmm. That didn't work... Weird."
+          "Hmmm. That didn't work... Weird. If this happens with other commands please contact " + contact
         );
       });
 		});

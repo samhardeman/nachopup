@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const fetch = require("node-fetch");
+const contact = require('../config-data/config.json').contact
 
 module.exports = {
   name: "xbox",
@@ -73,7 +74,7 @@ module.exports = {
       .catch(error => {
         console.error(error);
         message.channel.send(
-          "Hmmm. Something went wrong. Please DM @locuroid on twitter with a screenshot of your message and the response."
+          "Hmmm. Something went wrong. Please DM " + contact
         );
       });
   }

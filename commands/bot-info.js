@@ -6,7 +6,7 @@ module.exports = {
 			message.channel.send('Version 3.0.1');
 		}
 		else {
-			message.channel.send('NachoPup. Probably the extra most funnest bot ever. For the official commands, type `&cmd`. Crafted with care, Sam');
+			message.channel.send('NachoPup. Probably the extra most funnest bot ever. For the official commands, type `&cmd`. Crafted with care, Locuroid');
 		}
 	},
 };

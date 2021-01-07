@@ -1,5 +1,7 @@
-const retriever = require('../retriever');const Discord = require('discord.js');
+const retriever = require('../retriever');
+const Discord = require('discord.js');
 const weatherKey = process.env.WEATHER_KEY;
+const contact = require('../config-data/config.json').contact
 
 module.exports = {
 	name: 'weather',
@@ -46,7 +48,7 @@ module.exports = {
       .catch(error => {
         console.error(error);
         message.channel.send(
-          "Hmmm. That didn't work... Please DM @Locuroid on Twitter"
+          "Hmmm. That didn't work... Please DM " + contact
         );
       });
   },

@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const retriever = require('../retriever');
+const contact = require('../config-data/config.json').contact
 const key = process.env.GOOGLE_TOKEN;
 
 module.exports = {
@@ -41,7 +42,7 @@ module.exports = {
       })
       .catch(error => {
         console.error(error);
-        message.channel.send("Hmmm. No snippets were found for the topic. Try searching like this: &search puppy. If that doesn't work DM @Locuroid on Twitter!").catch(error => console.error(error)).then(msg => {
+        message.channel.send("Hmmm. No snippets were found for the topic. Try searching like this: &search puppy. If that doesn't work DM " + contact).catch(error => console.error(error)).then(msg => {
           msg.delete({ timeout: 60000})
         })
       });
