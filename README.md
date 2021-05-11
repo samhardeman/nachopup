@@ -31,4 +31,4 @@
 - &dog - Shows a picture of a dog.
 - &cat - Shows a picture of a cat.
 
-## If you want to run your own instance of Nachopup, try [repl.it](https://repl.it).
+## If you want to run your own instance of Nachopup, try [Replit](https://replit.com)
