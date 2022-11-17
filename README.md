@@ -8,6 +8,8 @@
                                           | |
                                           |_|
 ```
+*This bot is no longer active. I don't have the time, nor was I using it enough to justify continued maintenance.*
+
 ## Invite: [https://cutt.ly/nachopup](https://cutt.ly/nachopup)
 ## Prefix: &
 ## Features:
